@@ -7,6 +7,7 @@ pipeline {
     stages {
         stage("Build") {
             steps {
+                sh "gem install bundler"
                 sh "chmod +x build/alpine.sh"
                 sh "./build/alpine.sh"
                 sh "bundle install"
